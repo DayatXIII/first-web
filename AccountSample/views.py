@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.core.mail import send_mail, BadHeaderError
 from django.template.loader import get_template
-from django.shortcuts import render, redirect, HttpResponse, HttpResponseRedirect
+from django.shortcuts import render,  redirect, HttpResponse, HttpResponseRedirect
 from .forms import ContactForms
 
 def homepage(request):
@@ -30,6 +30,6 @@ def homepage(request):
                 send_mail(subject, contact_message, from_email, to_email, fail_silently=False)
             except BadHeaderError:
                 return HttpResponse('Invalid Header Found.')
-            return HttpResponse("Email Sent!!")
+            #return HttpResponse("Email Sent!!")
 
     return render(request, 'home.html', {'form':form})

@@ -178,11 +178,11 @@
                 <p>Contact us and we'll get back to you within 24 hours.</p>
                 <p><span class="glyphicon glyphicon-map-marker"></span> Bandar Seri Begawan, Brunei</p>
                 <p><span class="glyphicon glyphicon-phone"></span> +6738 123 4567</p>
-                <p><span class="glyphicon glyphicon-envelope"></span> mail@mail.com</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> mail@mail.com</p>                
             </div>
             <div class="col-sm-7 slideanim">
                 
-                <form method="post">
+                <form id="contactForm" method="post">
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-sm-6 form-group">
@@ -202,6 +202,8 @@
                     <div class="row">
                         <div class="col-sm-12 form-group">
                             <button class="btn btn-default pull-right" type="submit">Send</button>
+                            <!-- Test Modal -->
+                            <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#modalSuccess">Test Modal</button>                            
                         </div>    
                     </div>
                 </form>
@@ -232,5 +234,40 @@
       </a>
       <p>Bootstrap Theme Made By Me</p>
 </footer>
+
+<!-- Modal -->
+<div class="modal modal-dialog-center fade" id="modalSuccess" role="dialog">
+    
+    <!--<div class="modal-dialog modal-dialog-center modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center">Contact Form Sent</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-center">Thank you for your feedback.</p>
+            </div>
+        </div>
+    </div>-->
+
+    <!-- Alert Box -->
+    <div class="container">
+        <div class="alert alert-success text-center">
+            <strong>Contact Form Sent!</strong> We will get back to you in a moment.
+        </div>
+    </div>
+
+</div>
+
+<div class="modal modal-dialog-center fade" id="modalFail" role="dialog">
+
+    <!-- Alert Box -->
+    <div class="container">
+        <div class="alert alert-danger text-center">
+            <strong>Contact Form Failed to Sent!</strong> Please try again later.
+        </div>
+    </div>
+
+</div>
 
 {% endblock %}

@@ -1,3 +1,4 @@
+//Script for homepage dynamics
 $(document).ready(function () {
     // Add smooth scrolling to all links in navbar + footer link
     $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
@@ -32,3 +33,26 @@ $(document).ready(function () {
         });
     });
 })
+
+//Ajax for contact form submission and modal
+$(document).on('submit', '#contactForm', function (e) {
+    e.preventDefault();
+
+    $.ajax({
+        type: 'POST',
+        url: '/',
+        data: {
+            name: $('#name').val(),
+            email: $('#email').val(),
+            message: $('#comments').val(),
+            csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+        },
+        success: function () {
+            $('#modalSuccess').modal('show');
+            $('input[type=text], textarea, input[type=email]').val('');
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            $('#modalFail').modal('show');
+        },
+    });
+});
