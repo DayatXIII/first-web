@@ -41,23 +41,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-#Sendgrid settings
-
-#SENDGRID_API_KEY = "XXXXXXXXX"
-#EMAIL_HOST = 'smtp.sendgrid.net'
-#EMAIL_HOST_USER = 'XXXXXX'
-#EMAIL_HOST_PASSWORD = 'XXXXXXXX'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'XXXXXXXXX'
-EMAIL_HOST_PASSWORD = 'XXXXXXXXX'
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'xxxxxxxxx'
-ACCOUNT_EMAIL_SUBJECT_PREFIX = 'Contact email received from my website'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = ''
+ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
+EMAIL_BACKEND = ''
 
+try:
+    from .dev_settings import *
+except ImportError:
+    pass
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,9 +72,8 @@ ROOT_URLCONF = 'AccountSample.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templatess'],
         #For live deployment
-        #'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
