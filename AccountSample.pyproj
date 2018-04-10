@@ -46,6 +46,9 @@
     </Compile>
     <Compile Include="accounts\views.py" />
     <Compile Include="accounts\__init__.py" />
+    <Compile Include="AccountSample\dev_settings.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="manage.py" />
     <Compile Include="AccountSample\__init__.py" />
     <Compile Include="AccountSample\settings.py" />
