@@ -1,0 +1,38 @@
+﻿{% extends 'base_layout.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>The blog page</h1>
+    </div>
+</div>
+
+<div class="container">
+{% for lists in blogLists %}
+
+<div class="col-md-12">
+
+    <div class="media">
+        <div class="media-left">
+            <img src="../media/img_avatar1.png" class="media-object" style="width:60px;" alt="avatar" />
+        </div>
+        <div class="media-body">
+            <h2 class="media-heading">{{ lists.blog_title }}</h2>
+            <p>{{ lists.blog_message_snippet }} <a href="{% url 'blog:contents' slug=lists.blog_slug %}">Read More</a></p>
+            <p class="text-right">{{ lists.blog_date_created }}</p>
+        </div>
+    </div>
+    <hr />
+
+    <!--<div class="img-responsive">
+        <img src="{{ lists.blog_thumb.url }}" width="300" height="150" />
+    </div>-->        
+    
+</div>
+
+
+{% endfor %}
+</div>
+
+
+{% endblock %}

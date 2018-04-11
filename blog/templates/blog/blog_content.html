@@ -1,0 +1,31 @@
+﻿{% extends 'base_layout.html' %}
+{% block content %}
+
+<div class="container blog-container">
+    
+    <div class="row">
+        <div class="col-md-12">
+             <div class="text-center">
+                <img src="../../../media/img_avatar1.png" style="width:150px;" alt="avatar" />
+                <h2>{{ blogContent.blog_title }}</h2>
+                <p>By <span class="text-success lead">{{ blogContent.blog_author.username }} </span><span class="label label-warning">SUPERADMIN</span></p>
+                <p>Posted on {{ blogContent.blog_date_created }}</p>
+            </div>
+
+            <hr />
+            
+            <div class="text-justify">                    
+                    <p>{{ blogContent.blog_message }}</p>                    
+            </div>
+            
+            <hr />           
+        </div>
+        <!--<div class="col-md-4">
+            <div class="img-responsive">
+                <img src="{{ blogContent.blog_thumb.url }}" width="300" height="150" />
+            </div>   
+        </div>-->         
+    </div>    
+</div>
+  
+{% endblock %}

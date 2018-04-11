@@ -49,6 +49,16 @@
     <Compile Include="AccountSample\dev_settings.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="blog\admin.py" />
+    <Compile Include="blog\apps.py" />
+    <Compile Include="blog\migrations\__init__.py" />
+    <Compile Include="blog\models.py" />
+    <Compile Include="blog\tests.py" />
+    <Compile Include="blog\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="blog\views.py" />
+    <Compile Include="blog\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="AccountSample\__init__.py" />
     <Compile Include="AccountSample\settings.py" />
@@ -59,8 +69,12 @@
     <Content Include="accounts\templates\accounts\accounts.html" />
     <Content Include="assets\js\default.js" />
     <Content Include="assets\style.css" />
+    <Content Include="blog\templates\blog\blog.html" />
+    <Content Include="blog\templates\blog\blog_content.html" />
     <Content Include="db.sqlite3" />
     <Content Include="media\BruneiMuara.jpg" />
+    <Content Include="media\hello-world.jpg" />
+    <Content Include="media\img_avatar1.png" />
     <Content Include="media\newyork.jpg" />
     <Content Include="media\paris.jpg" />
     <Content Include="media\sanfran.jpg" />
@@ -77,6 +91,10 @@
     <Folder Include="accounts\templates\accounts\" />
     <Folder Include="assets\" />
     <Folder Include="assets\js\" />
+    <Folder Include="blog\" />
+    <Folder Include="blog\migrations\" />
+    <Folder Include="blog\templates\" />
+    <Folder Include="blog\templates\blog\" />
     <Folder Include="F:\Visual Studio Projects\Python\PythonDjango\AccountSample\AccountSample\assets\" />
     <Folder Include="F:\Visual Studio Projects\Python\PythonDjango\AccountSample\AccountSample\assets\js\" />
     <Folder Include="media\" />

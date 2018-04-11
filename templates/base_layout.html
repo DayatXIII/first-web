@@ -27,7 +27,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBarCollapsible">
                         <span class="glyphicon glyphicon-align-justify"></span>
                     </button>
-                    <a class="navbar-brand" href="#myPage">My Website</a>
+                    <a class="navbar-brand" href="/">My Website</a>
                 </div>
                 <div class="collapse navbar-collapse" id="navBarCollapsible">
                     <ul class="nav navbar-nav navbar-right">
@@ -39,6 +39,7 @@
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <li><a href="{% url 'blog:lists' %}">Blog</a></li>
                     </ul>                    
                 </div>                
             {#</div>#}
