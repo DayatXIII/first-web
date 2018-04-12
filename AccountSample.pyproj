@@ -51,6 +51,9 @@
     </Compile>
     <Compile Include="blog\admin.py" />
     <Compile Include="blog\apps.py" />
+    <Compile Include="blog\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="blog\migrations\__init__.py" />
     <Compile Include="blog\models.py" />
     <Compile Include="blog\tests.py" />
@@ -67,10 +70,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="accounts\templates\accounts\accounts.html" />
+    <Content Include="accounts\templates\accounts\login.html" />
     <Content Include="assets\js\default.js" />
     <Content Include="assets\style.css" />
     <Content Include="blog\templates\blog\blog.html" />
     <Content Include="blog\templates\blog\blog_content.html" />
+    <Content Include="blog\templates\blog\blog_create.html" />
     <Content Include="db.sqlite3" />
     <Content Include="media\BruneiMuara.jpg" />
     <Content Include="media\hello-world.jpg" />
@@ -80,8 +85,10 @@
     <Content Include="media\sanfran.jpg" />
     <Content Include="requirements.txt" />
     <Content Include="templates\base_layout.html" />
+    <Content Include="templates\blog_layout.html" />
     <Content Include="templates\contact_message.txt" />
     <Content Include="templates\home.html" />
+    <Content Include="templates\login_layout.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AccountSample\" />

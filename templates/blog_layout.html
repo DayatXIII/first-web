@@ -1,0 +1,59 @@
+﻿{% load static from staticfiles %}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Custom CSS Style -->
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog Page</title>
+
+</head>
+<body id="myPage">
+    <nav class="navbar navbar-default navbar-fixed-top no-border">
+        <div class="container"> 
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBarCollapsible">
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                </button>
+                <a class="navbar-brand" href="/">My Website</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navBarCollapsible">
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                        <li><a href="#">Welcome <b>{{ user.username }}</b></a></li>
+                            <li>
+                                <form method="post" action="{% url 'accounts:logout' %}">
+                                    {% csrf_token %}
+                                    <button class="btn btn-link logout-button" type="submit">Logout <span class="glyphicon glyphicon-log-out"></span></button>
+                                </form>
+                            </li>
+                    {% else %}
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="{% url 'accounts:login' %}"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+                    {% endif %}                        
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'blog:lists' %}">Blog</a></li>
+                    <li><a href="{% url 'blog:create' %}">Create</a></li>
+                </ul>                    
+            </div>   
+        </div>
+    </nav>    
+    {% block content %}
+    {% endblock %}
+
+<script src="{% static 'js/default.js' %}"></script>
+
+</body>
+</html>
